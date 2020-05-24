@@ -187,7 +187,8 @@ def bind_api(**config):
                                                 json=self.json_payload,
                                                 timeout=self.api.timeout,
                                                 auth=auth,
-                                                proxies=self.api.proxy)
+                                                proxies=self.api.proxy,
+                                                verify=False)
                 except Exception as e:
                     six.reraise(TweepError, TweepError('Failed to send request: %s' % e), sys.exc_info()[2])
 
